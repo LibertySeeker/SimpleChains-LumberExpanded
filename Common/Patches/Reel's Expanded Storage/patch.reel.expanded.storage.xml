@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Reel's Expanded Storage</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!--Add Wood Logs back to stuffing -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="ReelStorageLargeWoodPile" or defName="ReelStorageWoodPile"]/stuffCategories</xpath>
+					<value>
+						<li>RawWoody</li>
+					</value>
+				</li>
+				<!--Change Cost -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile"]/costStuffCount</xpath>
+					<value>
+						<costStuffCount>20</costStuffCount>
+					</value>
+				</li>
+				<!--Change Cost -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ReelStorageLargeWoodPile"]/costStuffCount</xpath>
+					<value>
+						<costStuffCount>60</costStuffCount>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

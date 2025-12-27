@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+	<name>Simple Chains: Lumber Expanded</name>
+	<author>Owlchemist;Wyr3d;tm3</author>
+	<packageId>tm3.SimpleChains.Lumber</packageId>
+	<supportedVersions>
+		<li>1.4</li>	
+		<li>1.5</li>		
+		<li>1.6</li>
+	</supportedVersions>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3444727611</url>
+	
+	<description>
+	Original Mod by the amazing OwlChemist, refined and adjusted beautifully by Wyr3d. I just added some stuff from Expanded Woodworking 2 without the bloat. This is mainly for my own use and training in modding. Original description below :
+	Original Mod by OwlChemist. This is an altered version previously for my own use, but every man and his dog is updating his stuff now I figured I'd upload this as an alternative. I have kept the original packageID for save compatibility. This means you will need to unsub from Owlchemist's version. Fear not, I flagged them as co-author of this one.
+	
+	1.4 and 1.5 version of OwlChemist's Simple Chain's Lumber with the following changes:
+	- Reduced the steel cost for the trestle down to 5 from 20
+
+	This was done because it was weird that it cost 20 steel and 20 wood and is mostly wood. This also makes it a bit easier get started for zero goods/tech starts.
+
+	- Increased Wood Log HP to 175 from 150.
+	- Increased Wood Log Mass to 1 from 0.4.
+	- Reduced the number of firewood that can be crafted at one time from 20 to 10
+
+	The additional HP added, and increased mass to Wood Log reflects that this is raw timber, and not cut lumber which should have reduced mass and durabilty. As logs are heavier, pawns carry less, this should include crafting recipies.
+
+	- Increased output from crafting greenwood from wood logs to 3 from 1.
+
+	This was done because we are making planks from logs. The extra effort reaps a little reward now. Also, the 1:1 ration was whack.
+		.
+	- Removed timber from firewood recipe.
+	- Increased output from crafting firewood from wood logs to 5 from 1.
+	- Decreased Firewood Mass to 0.2 from 0.4
+	
+	This was done to prevent a discrepancy between lumber and timber results. Timber has a mass of 1, and can now be cut into 3 lumber at 0.4 (it should be 3.3r but yeah, no). Timber can be cut into 5 Firewood at mass of 0.2. It would not make sense to have Lumber produce the same amount of firewood, and two separate recipes would be just weird.  
+
+	- Changed Passive Coolers to make them Stuffable. 
+	
+	The original version changed Passive Coolers to use dried lumber. This was an extra pain for hot maps, especially when using zero items/tech. Now greenwood lumber can also be used. 
+
+	- Sound Fix for 1.5
+ 	
+	This was done because changes made in Anomaly caused issues in the 1.4 version.
+
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>syrchalis.processor.framework</packageId>
+			<displayName>Processor Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2633514537</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Syrchalis/ProcessorFramework</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>syrchalis.processor.framework</li>
+		<li>AveryTheKitty.XenohumansAnthromorphs</li>
+	</loadAfter>
+	<loadBefore>
+		<li>vanillaexpanded.vtexe</li>
+		<li>ceteam.combatextended</li>
+	</loadBefore>
+	<modIconPath IgnoreIfNoMatchingField="True">RimWyr3d</modIconPath>	
+	
+</ModMetaData>

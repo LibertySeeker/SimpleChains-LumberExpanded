@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Deep Storage Plus (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!--Change Storage Option -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="DSP_WoodRack"]/building/fixedStorageSettings/filter/thingDefs/li</xpath>
+					<value>
+						<li>Owl_WoodLog</li>					
+						<li>Owl_Firewood</li>
+						<li>Owl_GreenLumber</li>
+						<li>WoodLog</li>						
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

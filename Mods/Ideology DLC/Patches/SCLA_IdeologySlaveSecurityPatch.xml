@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!-- Switch parent to non verb avtive resourcebase to prevent errors -->				
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Owl_WoodLog"]</xpath>
+		<attribute>ParentName</attribute>
+		<value>ResourceBase</value>
+	</Operation>
+
+		<!-- Remove ability to use Owl_Woodlog as a weapon -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Owl_WoodLog"]/tools</xpath>
+	</Operation>
+		
+</Patch>
