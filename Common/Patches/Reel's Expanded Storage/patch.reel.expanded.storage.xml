@@ -1,49 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
+
 <Patch>
+
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Reel's Expanded Storage</li>
 		</mods>
 		<match Class="PatchOperationSequence">
-			<success>Always</success>
 			<operations>
-				<!--Add Wood Logs back to stuffing -->
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="ReelStorageLargeWoodPile" or defName="ReelStorageWoodPile"]/stuffCategories</xpath>
-					<value>
-						<li>RawWoody</li>
-					</value>
-				</li>
-				<!--Change label
-				<li Class="PatchOperationReplace">
+			
+				<!--<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile"]/label</xpath>
-					<value>
-						<label>small pile</label>
-					</value>
+					<value>small pile</value>
 				</li>
 				
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="ReelStorageLargeWoodPile"]/label</xpath>
-					<value>
-						<label>large pile</label>
-					</value>
-				</li>
+					<value>small pile</value>
+				</li>-->
 				
-				
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile"]/costStuffCount</xpath>
+				<!--<li Class="PatchOperationAdd" MayRequire="tm3.SimpleChains.Lumber">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile"]/stuffCategories</xpath>
 					<value>
-						<costStuffCount>20</costStuffCount>
-					</value>
-				</li>
-				
-				<li Class="PatchOperationReplace">
-					<xpath>/Defs/ThingDef[defName="ReelStorageLargeWoodPile"]/costStuffCount</xpath>
-					<value>
-						<costStuffCount>60</costStuffCount>
+						<stuffCategories>
+							<li>Owl_WoodLog</li>					
+							<li>Owl_Firewood</li>
+							<li>Owl_GreenLumber</li>
+							<li>WoodLog</li>
+						<stuffCategories/>
 					</value>
 				</li>-->
+				
+				<li Class="PatchOperationAdd" MayRequire="tm3.SimpleChains.Lumber">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile" or defName="ReelStorageTanningRack" or defName="ReelStorageWeaponRack"]/stuffCategories</xpath>
+					<value>
+						<li>RawWoody</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile"]/modExtensions/li[@Class="AdaptiveStorage.Extension"]/lockStorageSettingsToStuff</xpath>
+					<value>
+						<lockStorageSettingsToStuff>false</lockStorageSettingsToStuff>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd" MayRequire="tm3.SimpleChains.Lumber">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile"]/building/fixedStorageSettings/filter/thingDefs</xpath>
+					<value>
+						<li>RawWoody</li>					
+						<li>Owl_Firewood</li>
+					</value>
+				</li>
+				
 			</operations>
 		</match>
 	</Operation>
+
 </Patch>
