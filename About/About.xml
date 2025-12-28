@@ -56,6 +56,7 @@
 	<loadAfter>
 		<li>syrchalis.processor.framework</li>
 		<li>AveryTheKitty.XenohumansAnthromorphs</li>
+		<li>LimeTreeSnake.Ammo</li>
 	</loadAfter>
 	<loadBefore>
 		<li>vanillaexpanded.vtexe</li>
