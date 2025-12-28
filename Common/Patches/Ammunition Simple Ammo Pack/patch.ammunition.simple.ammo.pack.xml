@@ -10,8 +10,8 @@
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/RecipeDef[defName="Make_AmmoPrimitive"]/ingredients/li[1]/filter/thingDefs</xpath>
 					<value>
-						<li>Owl_WoodLog</li>
-						<li>Owl_GreenLumber</li>
+						<li>Woody</li>
+						<li>RawWoody</li>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
@@ -19,8 +19,8 @@
 					<value>
 						<fixedIngredientFilter>
 							<thingDefs>
-								<li>Owl_WoodLog</li>
-								<li>Owl_GreenLumber</li>
+								<li>Woody</li>
+								<li>RawWoody</li>
 							</thingDefs>
 						</fixedIngredientFilter>
 					</value>
