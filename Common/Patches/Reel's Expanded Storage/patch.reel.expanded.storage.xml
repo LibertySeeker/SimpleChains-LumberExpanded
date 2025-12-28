@@ -14,6 +14,20 @@
 						<li>RawWoody</li>
 					</value>
 				</li>
+				<!--Change label -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile"]/label</xpath>
+					<value>
+						<label>small pile</label>
+					</value>
+				</li>
+				<!--Change label -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ReelStorageLargeWoodPile"]/label</xpath>
+					<value>
+						<label>large pile</label>
+					</value>
+				</li>
 				<!--Change Cost -->
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile"]/costStuffCount</xpath>

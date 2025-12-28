@@ -33,6 +33,8 @@
 				<xpath>Defs/WorkGiverDef[defName="DoBillsUseCraftingSpot"]/fixedBillGiverDefs</xpath>
 				<value>
 					<li>Owl_CarpentersTrestle</li>
+					<li>TM3_ElectricTableSaw</li>
+					<li MayRequire="Mlie.XNDCarpenterTables">TableCarpenter</li>
 				</value>
 			</li>
 			

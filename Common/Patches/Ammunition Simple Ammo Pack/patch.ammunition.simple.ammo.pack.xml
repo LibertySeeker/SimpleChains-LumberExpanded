@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[LTS]Ammunition - Simple Ammo Pack</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="Make_AmmoPrimitive"]/ingredients/li[1]/filter/thingDefs</xpath>
+					<value>
+						<li>Owl_WoodLog</li>
+						<li>Owl_GreenLumber</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

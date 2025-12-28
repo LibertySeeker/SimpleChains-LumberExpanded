@@ -34,6 +34,7 @@
 		<recipeUsers>
 			<li>Owl_CarpentersTrestle</li>
 			<li>TableMachining</li>
+			<li>TM3_ElectricTableSaw</li>
 		</recipeUsers>
 	</RecipeDef>
 
@@ -86,6 +87,7 @@
 			<li>Owl_CarpentersTrestle</li>
 			<li>TableMachining</li>
 			<li>CraftingSpot</li>
+			<li>TM3_ElectricTableSaw</li>
 		</recipeUsers>
 		<displayPriority>5</displayPriority>
 	</RecipeDef>

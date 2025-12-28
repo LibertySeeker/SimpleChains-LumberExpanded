@@ -98,7 +98,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Owl_CarpentersTrestle</defName>
 		<label>carpentry trestle</label>
-		<description>A pair of trestles can be used for basic woodworking tasks.</description>    
+		<description>A pair of trestles for basic woodworking tasks.</description>    
 		<thingClass>Building_WorkTable</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Production/carpenters_trestle</texPath>
@@ -107,11 +107,14 @@
 			<drawSize>(2.9,1.1)</drawSize>
 			<drawOffset>(0,0,0.1)</drawOffset>
 		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
 		<uiIconPath>Things/Building/Production/carpenters_trestle_north</uiIconPath>
 		<stuffCategories>
 			<li>Metallic</li>
 			<li>Woody</li>
 			<li>RawWoody</li>
+			<li>Stony</li>
 		</stuffCategories>
 		<costStuffCount>20</costStuffCount>
 		<costList>
@@ -125,7 +128,8 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<WorkToBuild>2000</WorkToBuild>
 			<Flammability>0.75</Flammability>
-			<WorkTableWorkSpeedFactor>0.66</WorkTableWorkSpeedFactor>
+			<Cleanliness>-5</Cleanliness>
+			<WorkTableWorkSpeedFactor>0.6</WorkTableWorkSpeedFactor>
 		</statBases>
 		<size>(3,1)</size>
 		<designationCategory>Production</designationCategory>
@@ -151,15 +155,121 @@
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>ToolCabinet</li>
+					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ChiselRack</li>
+					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ArtToolStand</li>
+					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_StonePolisher</li>
 				</linkableFacilities>
 			</li>
+			
+			<!-- Carperter's Table gets linkable from VFE:Medieval2 -->
+				<li Class="PatchOperationAdd" >
+					<xpath>Defs/ThingDef[defName="TableCarpenter"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<value>
+						<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ChiselRack</li>
+						<!--<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ArtToolStand</li>
+						<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_StonePolisher</li>-->
+					</value>
+				</li>
+			
+			
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<!--<li>PlaceWorker_PreventInteractionSpotOverlap</li>-->
 		</placeWorkers>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<thingCategories>
 			<li>BuildingsProduction</li>
 		</thingCategories>
-	</ThingDef>
+	</ThingDef>	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>TM3_ElectricTableSaw</defName>
+		<label>electric table saw</label>
+		<description>An electric table saw for woodworking tasks.</description>    
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Production/TableWoodworking</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3.5,1.5)</drawSize>
+			<drawOffset>(0,0,0.1)</drawOffset>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<uiIconPath>Things/Building/Production/TableWoodworking_north</uiIconPath>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>3</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0.75</Flammability>
+			<Cleanliness>-3</Cleanliness>
+			<!--<WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>-->
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<workTableRoomRole>Workshop</workTableRoomRole>
+			<workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<uninstallWork>500</uninstallWork>
+			<heatPerTickWhileWorking>0.08</heatPerTickWhileWorking>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<relatedBuildCommands>
+				<li>Owl_WoodDryingRack</li>
+			</relatedBuildCommands>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ChiselRack</li>
+					<!--<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ArtToolStand</li>
+					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_StonePolisher</li>-->
+				</linkableFacilities>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<!--<li>PlaceWorker_PreventInteractionSpotOverlap</li>-->
+		</placeWorkers>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+	</ThingDef>	
 </Defs>
