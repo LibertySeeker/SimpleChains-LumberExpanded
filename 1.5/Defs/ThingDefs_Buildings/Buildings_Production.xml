@@ -155,23 +155,8 @@
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>ToolCabinet</li>
-					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ChiselRack</li>
-					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ArtToolStand</li>
-					<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_StonePolisher</li>
 				</linkableFacilities>
 			</li>
-			
-			<!-- Carperter's Table gets linkable from VFE:Medieval2 -->
-				<li Class="PatchOperationAdd" >
-					<xpath>Defs/ThingDef[defName="TableCarpenter"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-					<value>
-						<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ChiselRack</li>
-						<!--<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_ArtToolStand</li>
-						<li MayRequire="OskarPotocki.VFE.Medieval2">VFEM2_StonePolisher</li>-->
-					</value>
-				</li>
-			
-			
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
