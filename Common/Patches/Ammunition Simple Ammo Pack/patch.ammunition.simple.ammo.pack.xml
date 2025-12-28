@@ -14,6 +14,17 @@
 						<li>Owl_GreenLumber</li>
 					</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="Make_AmmoPrimitive"]</xpath>
+					<value>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>Owl_WoodLog</li>
+								<li>Owl_GreenLumber</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>
