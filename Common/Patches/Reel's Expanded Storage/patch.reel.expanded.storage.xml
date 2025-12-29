@@ -46,10 +46,16 @@
 				</li>
 				
 				<li Class="PatchOperationAdd" MayRequire="tm3.SimpleChains.Lumber">
-					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile"]/building/fixedStorageSettings/filter/thingDefs</xpath>
+					<xpath>/Defs/ThingDef[defName="ReelStorageWoodPile" or defName="ReelStorageLargeWoodPile"]/building</xpath>
 					<value>
-						<li>RawWoody</li>					
-						<li>Owl_Firewood</li>
+						<fixedStorageSettings>
+							<filter>
+								<thingDefs>
+									<li>RawWoody</li>					
+									<li>Owl_Firewood</li>
+								</thingDefs>
+							</filter>
+						</fixedStorageSettings>
 					</value>
 				</li>
 				
